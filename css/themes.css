@@ -1,0 +1,51 @@
+/* Light Mode (default) */
+body {
+    background: #ffffff;
+    color: #333;
+}
+
+.card {
+    background: #f0f0f0;
+}
+
+.card-details {
+    background: #fff;
+}
+
+.card input, .card textarea {
+    background: #fff;
+    color: #333;
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #121212;
+        color: #e0e0e0;
+    }
+
+    .card {
+        background: #1e1e1e;
+        color: #e0e0e0;
+    }
+
+    .card-details {
+        background: #2e2e2e;
+        color: #e0e0e0;
+    }
+
+    .card input, .card textarea {
+        background: #3e3e3e;
+        color: #e0e0e0;
+        border: 1px solid #555;
+    }
+
+    .footer a {
+        color: #81d4fa;
+    }
+
+    .login-message {
+        background-color: #b00020;
+        color: #ffffff;
+    }
+}

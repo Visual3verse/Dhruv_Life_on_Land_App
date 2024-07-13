@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Life on Land App</title>
-    <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/themes.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
@@ -30,7 +33,7 @@
         <!-- Feed Animals Section -->
         <div class="card alternate-card-1" id="feed-animals">
             <div class="card-header glossy">
-                Feed Animals
+                <h2>Feed Animals</h2>
             </div>
             <div class="card-details">
                 <div class="slider">
@@ -53,9 +56,12 @@
                     </div>
                 </div>
                 <p>Join us in feeding stray animals. You can share your activities and earn Ora Points for your contributions. Help us make a difference in the lives of stray animals in your community.</p>
-                <input type="file" accept="image/*">
-                <input type="text" placeholder="Location">
-                <textarea placeholder="Notes"></textarea>
+                <label for="feed-image">Upload Image:</label>
+                <input type="file" id="feed-image" accept="image/*">
+                <label for="feed-location">Location:</label>
+                <input type="text" id="feed-location" placeholder="Location">
+                <label for="feed-notes">Notes:</label>
+                <textarea id="feed-notes" placeholder="Notes"></textarea>
                 <button class="glossy-button">Submit</button>
             </div>
         </div>
@@ -63,7 +69,7 @@
         <!-- Gallery Section -->
         <div class="card alternate-card-2" id="gallery">
             <div class="card-header glossy">
-                Gallery
+                <h2>Gallery</h2>
             </div>
             <div class="card-details">
                 <div class="slider">
@@ -86,7 +92,8 @@
                     </div>
                 </div>
                 <p>Explore and share photos of your animal feeding activities. Our gallery showcases the amazing efforts of our community members in caring for stray animals.</p>
-                <input type="file" accept="image/*">
+                <label for="gallery-image">Upload Image:</label>
+                <input type="file" id="gallery-image" accept="image/*">
                 <button class="glossy-button">Upload</button>
             </div>
         </div>
@@ -94,7 +101,7 @@
         <!-- Leaderboard Section -->
         <div class="card alternate-card-3" id="leaderboard">
             <div class="card-header glossy">
-                Leaderboard
+                <h2>Leaderboard</h2>
             </div>
             <div class="card-details">
                 <p>Check out the top contributors in our community. See who is leading in animal feeding activities and how you can climb the ranks by participating more. Earn Ora Points for your contributions and see your name rise on the leaderboard!</p>
@@ -157,7 +164,7 @@
         <div class="card alternate-card-4" id="profile">
             <div class="card-header glossy">
                 <img src="images/aarav_sharma.jpg" alt="Aarav Sharma">
-                Aarav Sharma's Profile <i class="fas fa-trophy trophy-icon"></i>
+                <h2>Aarav Sharma's Profile <i class="fas fa-trophy trophy-icon"></i></h2>
             </div>
             <div class="card-details">
                 <p><strong>Location:</strong> Mumbai, India</p>
