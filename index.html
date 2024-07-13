@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life on Land App</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        nav ul li {
+            display: inline-block;
+            margin: 0 5px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            font-size: 10px; /* Adjusted for better visibility */
+        }
+        nav ul li a.feed-animals {
+            background: #ff9800;
+            color: #fff;
+        }
+        nav ul li a.gallery {
+            background: #c2185b;
+            color: #fff;
+        }
+        nav ul li a.leaderboard {
+            background: #56ab2f;
+            color: #fff;
+        }
+        nav ul li a.profile {
+            background: #1b7fba;
+            color: #fff;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        .slider {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin: auto;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .slides img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .dots {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .dot {
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            margin: 0 5px;
+            background-color: #ddd;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .active {
+            background-color: #717171;
+        }
+        .bubbles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        .bubble {
+            position: absolute;
+            bottom: -100px;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            animation: rise 10s infinite ease-in-out;
+        }
+        .bubble:nth-child(2) {
+            width: 20px;
+            height: 20px;
+            left: 20%;
+            animation-duration: 7s;
+        }
+        .bubble:nth-child(3) {
+            width: 30px;
+            height: 30px;
+            left: 40%;
+            animation-duration: 8s;
+        }
+        .bubble:nth-child(4) {
+            width: 50px;
+            height: 50px;
+            left: 60%;
+            animation-duration: 11s;
+        }
+        .bubble:nth-child(5) {
+            width: 25px;
+            height: 25px;
+            left: 80%;
+            animation-duration: 9s;
+        }
+        @keyframes rise {
+            0% {
+                bottom: -100px;
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(50px);
+            }
+            100% {
+                bottom: 100%;
+                transform: translateX(100px);
+            }
+        }
+        .trophy-icon {
+            margin-left: 5px;
+            font-size: 18px;
+            color: gold;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header" id="top">
+            <img src="images/earth_logo.png" alt="Earth Logo">
+            <h1>Life on Land App</h1>
+        </div>
+        
+        <!-- Features Menu -->
+        <nav>
+            <ul>
+                <li><a href="#feed-animals" class="feed-animals">Feed</a></li>
+                <li>|</li>
+                <li><a href="#gallery" class="gallery">Gallery</a></li>
+                <li>|</li>
+                <li><a href="#leaderboard" class="leaderboard">Leaderboard</a></li>
+                <li>|</li>
+                <li><a href="#profile" class="profile">Profile</a></li>
+            </ul>
+        </nav>
+        
+        <!-- Feed Animals Section -->
+        <div class="card alternate-card-1" id="feed-animals">
+            <div class="card-header glossy">
+                Feed Animals
+            </div>
+            <div class="card-details">
+                <div class="slider">
+                    <div class="slides">
+                        <img src="images/feed_animals1.jpg" alt="Feed Animals 1">
+                        <img src="images/feed_animals2.jpg" alt="Feed Animals 2">
+                        <img src="images/feed_animals3.jpg" alt="Feed Animals 3">
+                    </div>
+                    <div class="dots">
+                        <span class="dot" onclick="currentSlide(1)"></span>
+                        <span class="dot" onclick="currentSlide(2)"></span>
+                        <span class="dot" onclick="currentSlide(3)"></span>
+                    </div>
+                    <div class="bubbles">
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                    </div>
+                </div>
+                <p>Join us in feeding stray animals. You can share your activities and earn Ora Points for your contributions. Help us make a difference in the lives of stray animals in your community.</p>
+                <input type="file" accept="image/*">
+                <input type="text" placeholder="Location">
+                <textarea placeholder="Notes"></textarea>
+                <button class="glossy-button">Submit</button>
+            </div>
+        </div>
+        
+        <!-- Gallery Section -->
+        <div class="card alternate-card-2" id="gallery">
+            <div class="card-header glossy">
+                Gallery
+            </div>
+            <div class="card-details">
+                <div class="slider">
+                    <div class="slides">
+                        <img src="images/gallery1.jpg" alt="Gallery Image 1">
+                        <img src="images/gallery2.jpg" alt="Gallery Image 2">
+                        <img src="images/gallery3.jpg" alt="Gallery Image 3">
+                    </div>
+                    <div class="dots">
+                        <span class="dot" onclick="currentSlide(1)"></span>
+                        <span class="dot" onclick="currentSlide(2)"></span>
+                        <span class="dot" onclick="currentSlide(3)"></span>
+                    </div>
+                    <div class="bubbles">
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                    </div>
+                </div>
+                <p>Explore and share photos of your animal feeding activities. Our gallery showcases the amazing efforts of our community members in caring for stray animals.</p>
+                <input type="file" accept="image/*">
+                <button class="glossy-button">Upload</button>
+            </div>
+        </div>
+        
+        <!-- Leaderboard Section -->
+        <div class="card alternate-card-3" id="leaderboard">
+            <div class="card-header glossy">
+                Leaderboard
+            </div>
+            <div class="card-details">
+                <p>Check out the top contributors in our community. See who is leading in animal feeding activities and how you can climb the ranks by participating more. Earn Ora Points for your contributions and see your name rise on the leaderboard!</p>
+                <div class="leaderboard">
+                    <div class="card sub-card-1">
+                        <div class="card-header glossy">
+                            <img src="images/aarav_sharma.jpg" alt="Aarav Sharma">
+                            1. Aarav Sharma <i class="fas fa-trophy trophy-icon"></i>
+                        </div>
+                        <div class="card-details">
+                            <p>Location: Mumbai, India</p>
+                            <p>Ora Points: 1500</p>
+                        </div>
+                    </div>
+                    <div class="card sub-card-2">
+                        <div class="card-header glossy">
+                            <img src="images/anaya_singh.jpg" alt="Anaya Singh">
+                            2. Anaya Singh <i class="fas fa-trophy trophy-icon"></i>
+                        </div>
+                        <div class="card-details">
+                            <p>Location: Delhi, India</p>
+                            <p>Ora Points: 1400</p>
+                        </div>
+                    </div>
+                    <div class="card sub-card-3">
+                        <div class="card-header glossy">
+                            <img src="images/vihaan_gupta.jpg" alt="Vihaan Gupta">
+                            3. Vihaan Gupta <i class="fas fa-trophy trophy-icon"></i>
+                        </div>
+                        <div class="card-details">
+                            <p>Location: Bangalore, India</p>
+                            <p>Ora Points: 1300</p>
+                        </div>
+                    </div>
+                    <div class="card sub-card-4">
+                        <div class="card-header glossy">
+                            <img src="images/diya_patel.jpg" alt="Diya Patel">
+                            4. Diya Patel
+                        </div>
+                        <div class="card-details">
+                            <p>Location: Ahmedabad, India</p>
+                            <p>Ora Points: 1200</p>
+                        </div>
+                    </div>
+                    <div class="card sub-card-5">
+                        <div class="card-header glossy">
+                            <img src="images/arjun_reddy.jpg" alt="Arjun Reddy">
+                            5. Arjun Reddy
+                        </div>
+                        <div class="card-details">
+                            <p>Location: Hyderabad, India</p>
+                            <p>Ora Points: 1100</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Profile Section -->
+        <div class="card alternate-card-4" id="profile">
+            <div class="card-header glossy">
+                <img src="images/aarav_sharma.jpg" alt="Aarav Sharma">
+                Aarav Sharma's Profile <i class="fas fa-trophy trophy-icon"></i>
+            </div>
+            <div class="card-details">
+                <p><strong>Location:</strong> Mumbai, India</p>
+                <p><strong>Total Ora Points:</strong> 1500</p>
+                <p><strong>Rank:</strong> 1</p>
+                <h3>Activity History</h3>
+                <ul>
+                    <li>Fed stray cat at Central Park - 100 Ora Points</li>
+                    <li>Fed birds at Riverside - 200 Ora Points</li>
+                    <li>Fed stray dog at Main Street - 150 Ora Points</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p><a href="#top">Top</a></p>
+            <p><a href="#">Terms and Conditions</a> | <a href="#">Privacy Policy</a></p>
+        </div>
+    </div>
+
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let slides = document.getElementsByClassName("slides");
+            let dots = document.getElementsByClassName("dot");
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slideIndex++;
+            if (slideIndex > slides[0].children.length) {
+                slideIndex = 1;
+            }
+            for (let slide of slides) {
+                slide.style.transform = "translateX(" + (-(slideIndex - 1) * 100) + "%)";
+            }
+            dots[slideIndex - 1].className += " active";
+            setTimeout(showSlides, 3000); // Change image every 3 seconds
+        }
+
+        function currentSlide(n) {
+            slideIndex = n;
+            showSlides();
+        }
+    </script>
+</body>
+</html>
