@@ -3,29 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
-    <link rel="stylesheet" href="CSS/styles.css">
+    <title>Register - Life on Land App</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <div class="container">
-        <div class="header">
+        <div class="header" id="top">
             <img src="images/earth_logo.png" alt="Earth Logo">
             <h1>Life on Land App</h1>
         </div>
-        <div class="card alternate-card-2">
-            <div class="card-header">
+        
+        <div class="card">
+            <div class="card-header glossy">
                 Register
             </div>
             <div class="card-details">
-                <input type="text" placeholder="Name">
-                <input type="email" placeholder="Email">
-                <input type="password" placeholder="Password">
-                <input type="password" placeholder="Confirm Password">
-                <label for="profileImage">Upload Profile Image:</label>
-                <input type="file" id="profileImage" name="profileImage" accept="image/*">
-                <button>Register</button>
-                <p><a href="login.html">Back to Login</a></p>
+                <form id="registerForm" action="home.html" method="post">
+                    <input type="text" placeholder="Username" required>
+                    <input type="email" placeholder="Email" required>
+                    <input type="password" placeholder="Password" required>
+                    <input type="password" placeholder="Confirm Password" required>
+                    <button type="submit" class="glossy-button">Register</button>
+                </form>
+                <p>Already have an account? <a href="index.html">Login</a></p>
             </div>
+        </div>
+        
+        <div class="footer">
+            <p><a href="#">Terms and Conditions</a> | <a href="#">Privacy Policy</a></p>
         </div>
     </div>
 </body>
