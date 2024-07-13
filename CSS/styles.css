@@ -1,5 +1,8 @@
+/* Importing Roboto font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 body {
-    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-family: 'Roboto', Arial, sans-serif; /* Using Roboto with fallback to Arial */
     margin: 0;
     padding: 0;
     background: #ffffff;
