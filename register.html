@@ -15,14 +15,18 @@
         
         <div class="card">
             <div class="card-header glossy">
-                Register
+                <h2>Register</h2>
             </div>
             <div class="card-details">
                 <form id="registerForm" action="home.html" method="post">
-                    <input type="text" placeholder="Username" required>
-                    <input type="email" placeholder="Email" required>
-                    <input type="password" placeholder="Password" required>
-                    <input type="password" placeholder="Confirm Password" required>
+                    <label for="reg-username">Username:</label>
+                    <input type="text" id="reg-username" placeholder="Username" required>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" placeholder="Email" required>
+                    <label for="password">Password:</label>
+                    <input type="password" id="reg-password" placeholder="Password" required>
+                    <label for="confirm-password">Confirm Password:</label>
+                    <input type="password" id="confirm-password" placeholder="Confirm Password" required>
                     <button type="submit" class="glossy-button">Register</button>
                 </form>
                 <p>Already have an account? <a href="index.html">Login</a></p>
