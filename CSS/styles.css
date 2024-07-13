@@ -133,6 +133,137 @@ body {
     background: linear-gradient(to bottom, rgba(255,255,255,0.5), rgba(255,255,255,0)), linear-gradient(to bottom, #ff9800, #e68900); /* Gradient for glossy effect */
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
 }
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+nav ul li {
+    display: inline-block;
+    margin: 0 5px;
+}
+nav ul li a {
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-family: 'Roboto', Arial, sans-serif;
+    font-size: 10px; /* Adjusted for better visibility */
+}
+nav ul li a.feed-animals {
+    background: #ff9800;
+    color: #fff;
+}
+nav ul li a.gallery {
+    background: #c2185b;
+    color: #fff;
+}
+nav ul li a.leaderboard {
+    background: #56ab2f;
+    color: #fff;
+}
+nav ul li a.profile {
+    background: #1b7fba;
+    color: #fff;
+}
+nav ul li a:hover {
+    text-decoration: underline;
+}
+.slider {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+.slides img {
+    width: 100%;
+    border-radius: 10px;
+}
+.dots {
+    text-align: center;
+    margin-top: 10px;
+}
+.dot {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin: 0 5px;
+    background-color: #ddd;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.active {
+    background-color: #717171;
+}
+.bubbles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+.bubble {
+    position: absolute;
+    bottom: -100px;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    animation: rise 10s infinite ease-in-out;
+}
+.bubble:nth-child(2) {
+    width: 20px;
+    height: 20px;
+    left: 20%;
+    animation-duration: 7s;
+}
+.bubble:nth-child(3) {
+    width: 30px;
+    height: 30px;
+    left: 40%;
+    animation-duration: 8s;
+}
+.bubble:nth-child(4) {
+    width: 50px;
+    height: 50px;
+    left: 60%;
+    animation-duration: 11s;
+}
+.bubble:nth-child(5) {
+    width: 25px;
+    height: 25px;
+    left: 80%;
+    animation-duration: 9s;
+}
+@keyframes rise {
+    0% {
+        bottom: -100px;
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(50px);
+    }
+    100% {
+        bottom: 100%;
+        transform: translateX(100px);
+    }
+}
+.trophy-icon {
+    margin-left: 5px;
+    font-size: 18px;
+    color: gold;
+}
 @media (max-width: 600px) {
     .container {
         padding: 10px;
