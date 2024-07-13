@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Life on Land App</title>
+    <title>Login - Life on Land App</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <div class="container">
@@ -14,195 +13,42 @@
             <h1>Life on Land App</h1>
         </div>
         
-        <!-- Features Menu -->
-        <nav>
-            <ul>
-                <li><a href="#feed-animals" class="feed-animals">Feed</a></li>
-                <li>|</li>
-                <li><a href="#gallery" class="gallery">Gallery</a></li>
-                <li>|</li>
-                <li><a href="#leaderboard" class="leaderboard">Leaderboard</a></li>
-                <li>|</li>
-                <li><a href="#profile" class="profile">Profile</a></li>
-            </ul>
-        </nav>
-        
-        <!-- Feed Animals Section -->
-        <div class="card alternate-card-1" id="feed-animals">
-            <div class="card-header glossy">
-                Feed Animals
-            </div>
-            <div class="card-details">
-                <div class="slider">
-                    <div class="slides">
-                        <img src="images/feed_animals1.jpg" alt="Feed Animals 1">
-                        <img src="images/feed_animals2.jpg" alt="Feed Animals 2">
-                        <img src="images/feed_animals3.jpg" alt="Feed Animals 3">
-                    </div>
-                    <div class="dots">
-                        <span class="dot" onclick="currentSlide(1)"></span>
-                        <span class="dot" onclick="currentSlide(2)"></span>
-                        <span class="dot" onclick="currentSlide(3)"></span>
-                    </div>
-                    <div class="bubbles">
-                        <div class="bubble"></div>
-                        <div class="bubble"></div>
-                        <div class="bubble"></div>
-                        <div class="bubble"></div>
-                        <div class="bubble"></div>
-                    </div>
-                </div>
-                <p>Join us in feeding stray animals. You can share your activities and earn Ora Points for your contributions. Help us make a difference in the lives of stray animals in your community.</p>
-                <input type="file" accept="image/*">
-                <input type="text" placeholder="Location">
-                <textarea placeholder="Notes"></textarea>
-                <button class="glossy-button">Submit</button>
-            </div>
+        <div id="loginMessage" class="card" style="display: none; background-color: #ffcccc; color: #ff0000; text-align: center; padding: 10px; margin-bottom: 10px;">
+            Invalid username or password. Please try again.
         </div>
-        
-        <!-- Gallery Section -->
-        <div class="card alternate-card-2" id="gallery">
+
+        <div class="card">
             <div class="card-header glossy">
-                Gallery
+                Login
             </div>
             <div class="card-details">
-                <div class="slider">
-                    <div class="slides">
-                        <img src="images/gallery1.jpg" alt="Gallery Image 1">
-                        <img src="images/gallery2.jpg" alt="Gallery Image 2">
-                        <img src="images/gallery3.jpg" alt="Gallery Image 3">
-                    </div>
-                    <div class="dots">
-                        <span class="dot" onclick="currentSlide(1)"></span>
-                        <span class="dot" onclick="currentSlide(2)"></span>
-                        <span class="dot" onclick="currentSlide(3)"></span>
-                    </div>
-                    <div class="bubbles">
-                        <div class="bubble"></div>
-                        <div class="bubble"></div>
-                        <div class="bubble"></div>
-                        <div class="bubble"></div>
-                        <div class="bubble"></div>
-                    </div>
-                </div>
-                <p>Explore and share photos of your animal feeding activities. Our gallery showcases the amazing efforts of our community members in caring for stray animals.</p>
-                <input type="file" accept="image/*">
-                <button class="glossy-button">Upload</button>
-            </div>
-        </div>
-        
-        <!-- Leaderboard Section -->
-        <div class="card alternate-card-3" id="leaderboard">
-            <div class="card-header glossy">
-                Leaderboard
-            </div>
-            <div class="card-details">
-                <p>Check out the top contributors in our community. See who is leading in animal feeding activities and how you can climb the ranks by participating more. Earn Ora Points for your contributions and see your name rise on the leaderboard!</p>
-                <div class="leaderboard">
-                    <div class="card sub-card-1">
-                        <div class="card-header glossy">
-                            <img src="images/aarav_sharma.jpg" alt="Aarav Sharma">
-                            1. Aarav Sharma <i class="fas fa-trophy trophy-icon"></i>
-                        </div>
-                        <div class="card-details">
-                            <p>Location: Mumbai, India</p>
-                            <p>Ora Points: 1500</p>
-                        </div>
-                    </div>
-                    <div class="card sub-card-2">
-                        <div class="card-header glossy">
-                            <img src="images/anaya_singh.jpg" alt="Anaya Singh">
-                            2. Anaya Singh <i class="fas fa-trophy trophy-icon"></i>
-                        </div>
-                        <div class="card-details">
-                            <p>Location: Delhi, India</p>
-                            <p>Ora Points: 1400</p>
-                        </div>
-                    </div>
-                    <div class="card sub-card-3">
-                        <div class="card-header glossy">
-                            <img src="images/vihaan_gupta.jpg" alt="Vihaan Gupta">
-                            3. Vihaan Gupta <i class="fas fa-trophy trophy-icon"></i>
-                        </div>
-                        <div class="card-details">
-                            <p>Location: Bangalore, India</p>
-                            <p>Ora Points: 1300</p>
-                        </div>
-                    </div>
-                    <div class="card sub-card-4">
-                        <div class="card-header glossy">
-                            <img src="images/diya_patel.jpg" alt="Diya Patel">
-                            4. Diya Patel
-                        </div>
-                        <div class="card-details">
-                            <p>Location: Ahmedabad, India</p>
-                            <p>Ora Points: 1200</p>
-                        </div>
-                    </div>
-                    <div class="card sub-card-5">
-                        <div class="card-header glossy">
-                            <img src="images/arjun_reddy.jpg" alt="Arjun Reddy">
-                            5. Arjun Reddy
-                        </div>
-                        <div class="card-details">
-                            <p>Location: Hyderabad, India</p>
-                            <p>Ora Points: 1100</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Profile Section -->
-        <div class="card alternate-card-4" id="profile">
-            <div class="card-header glossy">
-                <img src="images/aarav_sharma.jpg" alt="Aarav Sharma">
-                Aarav Sharma's Profile <i class="fas fa-trophy trophy-icon"></i>
-            </div>
-            <div class="card-details">
-                <p><strong>Location:</strong> Mumbai, India</p>
-                <p><strong>Total Ora Points:</strong> 1500</p>
-                <p><strong>Rank:</strong> 1</p>
-                <h3>Activity History</h3>
-                <ul>
-                    <li>Fed stray cat at Central Park - 100 Ora Points</li>
-                    <li>Fed birds at Riverside - 200 Ora Points</li>
-                    <li>Fed stray dog at Main Street - 150 Ora Points</li>
-                </ul>
+                <form id="loginForm">
+                    <input type="text" id="username" placeholder="Username" required>
+                    <input type="password" id="password" placeholder="Password" required>
+                    <button type="submit" class="glossy-button">Login</button>
+                </form>
             </div>
         </div>
         
         <div class="footer">
-            <p><a href="#top">Top</a></p>
             <p><a href="#">Terms and Conditions</a> | <a href="#">Privacy Policy</a></p>
         </div>
     </div>
 
     <script>
-        let slideIndex = 0;
-        showSlides();
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            var loginMessage = document.getElementById('loginMessage');
 
-        function showSlides() {
-            let slides = document.getElementsByClassName("slides");
-            let dots = document.getElementsByClassName("dot");
-            for (let i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
+            if (username && password) {
+                window.location.href = 'home.html';
+            } else {
+                loginMessage.style.display = 'block';
             }
-            slideIndex++;
-            if (slideIndex > slides[0].children.length) {
-                slideIndex = 1;
-            }
-            for (let slide of slides) {
-                slide.style.transform = "translateX(" + (-(slideIndex - 1) * 100) + "%)";
-            }
-            dots[slideIndex - 1].className += " active";
-            setTimeout(showSlides, 3000); // Change image every 3 seconds
-        }
-
-        function currentSlide(n) {
-            slideIndex = n;
-            showSlides();
-        }
+        });
     </script>
 </body>
 </html>
