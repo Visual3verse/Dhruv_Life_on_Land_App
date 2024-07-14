@@ -21,12 +21,12 @@
                 <h2>Register</h2>
             </div>
             <div class="card-details">
-                <form id="registerForm" action="home.html" method="post">
+                <form id="registerForm">
                     <label for="reg-username">Username:</label>
                     <input type="text" id="reg-username" placeholder="Username" required>
                     <label for="email">Email:</label>
                     <input type="email" id="email" placeholder="Email" required>
-                    <label for="password">Password:</label>
+                    <label for="reg-password">Password:</label>
                     <input type="password" id="reg-password" placeholder="Password" required>
                     <label for="confirm-password">Confirm Password:</label>
                     <input type="password" id="confirm-password" placeholder="Confirm Password" required>
@@ -40,5 +40,25 @@
             <p><a href="#">Terms and Conditions</a> | <a href="#">Privacy Policy</a></p>
         </div>
     </div>
+
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            var username = document.getElementById('reg-username').value;
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('reg-password').value;
+            var confirmPassword = document.getElementById('confirm-password').value;
+
+            if (password !== confirmPassword) {
+                alert("Passwords do not match!");
+                return;
+            }
+
+            var queryString = `?username=${encodeURIComponent(username)}&email=${encodeURIComponent(email)}`;
+
+            window.location.href = 'thankyou.html' + queryString;
+        });
+    </script>
 </body>
 </html>

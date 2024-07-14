@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - Life on Land App</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/themes.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header" id="top">
+            <img src="images/earth_logo.png" alt="Earth Logo">
+            <h1>Life on Land App</h1>
+        </div>
+        
+        <div class="card">
+            <div class="card-header glossy">
+                <h2>Thank You for Registering!</h2>
+            </div>
+            <div class="card-details">
+                <p>Thank you for registering, <span id="username"></span>!</p>
+                <p>Email: <span id="email"></span></p>
+                <p>You can now <a href="index.html">login</a> with your new account.</p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p><a href="#">Terms and Conditions</a> | <a href="#">Privacy Policy</a></p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var urlParams = new URLSearchParams(window.location.search);
+            var username = urlParams.get('username');
+            var email = urlParams.get('email');
+
+            document.getElementById('username').textContent = username;
+            document.getElementById('email').textContent = email;
+        });
+    </script>
+</body>
+</html>
